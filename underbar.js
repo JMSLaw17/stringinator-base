@@ -96,7 +96,9 @@ const every = function(obj, callback=identity) {
 
 // Return true if even 1 element / object value is accepted by the callback.
 const some = function(obj, callback=identity) {
-  // Your code goes here
+  return reduce(obj, function(accumulator, value) {
+    return accumulator || !!callback(value);
+  }, false);
 };
 
 // Return an array with all elements / object values that are accepted by the callback.
