@@ -1,7 +1,12 @@
 const _ = require('./underbar');
 
 const first = function(str, n) {
-  // Your code goes here
+  if (n === undefined) {
+    return str.charAt(0);
+  } else {
+    console.log(str);
+    return _.first(str.split(''), n).join('');
+  }
 };
 
 const last = function(str, n) {
