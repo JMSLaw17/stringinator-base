@@ -46,8 +46,9 @@ const truncateString = function(val, maxLength) {
 };
 
 const truncateLongItems = function(obj, maxLength) {
-  // hint: use truncateString above
-  // Your code goes here
+  return _.map(obj, function(value) {
+    return truncateString(value, maxLength);
+  });
 };
 
 const countChars = function(str) {
