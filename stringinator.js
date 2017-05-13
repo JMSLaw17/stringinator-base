@@ -4,7 +4,6 @@ const first = function(str, n) {
   if (n === undefined) {
     return str.charAt(0);
   } else {
-    console.log(str);
     return _.first(str.split(''), n).join('');
   }
 };
