@@ -9,7 +9,11 @@ const first = function(str, n) {
 };
 
 const last = function(str, n) {
-  // Your code goes here
+  if (n === undefined) {
+    return str.charAt(str.length - 1);
+  } else {
+    return _.last(str.split(''), n).join('');
+  }
 };
 
 const removeChar = function(str, target) {
