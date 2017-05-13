@@ -52,7 +52,23 @@ const truncateLongItems = function(obj, maxLength) {
 };
 
 const countChars = function(str) {
-  // Your code goes here
+  /*results = {};
+  const uniq = _.uniq(str.split(''));
+  _.each(uniq, function(value) {
+    results[value] = _.filter(str.split(''), function(val) {
+      return value === val;
+    }).length;
+  });
+  console.log(results);
+  return results;*/
+  return _.reduce(str.split(''), function(accumulator, value) {
+    if (accumulator[value] === undefined) {
+      accumulator[value] = 1;
+    } else {
+      accumulator[value] += 1;
+    }
+    return accumulator;
+  }, {});
 };
 
 const dedup = function(str) {
